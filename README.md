@@ -86,7 +86,7 @@ When `pg_ivm` is installed, the following objects are created.
 
 Use `create_immv` function to create IMMV.
 ```
-create_immv(immv_name text, view_definition text [, unlogged bool DEFAULT false]) RETURNS bigint
+create_immv(immv_name text, view_definition text [, unlogged bool DEFAULT true]) RETURNS bigint
 ```
 `create_immv` defines a new IMMV of a query. A table of the name `immv_name` is created and a query specified by `view_definition` is executed and used to populate the IMMV. The query is stored in `pg_ivm_immv`, so that it can be refreshed later upon incremental view maintenance. `create_immv` returns the number of rows in the created IMMV.
 
